@@ -42,7 +42,7 @@ public class Advinhacao {
                 System.out.println("> Número inválido. Tente um número entre 1 e 10: ");
                 guess = read.nextInt();
         }   } while (guess != numeroRandom);
-            System.out.printf("Parabéns! Você acertou em %d tentativas!\n\n",contatorTentativas + 1);//.
+            System.out.printf("Parabéns! Você acertou em %d tentativas!\n\n",contatorTentativas + 1);
         }
         read.close();
     }
