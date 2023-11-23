@@ -8,9 +8,10 @@ public class Advinhacao {
         System.out.println("> * * * Bem vindo ao jogo da advinhação! * * *\n\n> Vou gerar um número automaticamente e você deve advinhar qual número estou \"pensando\".\n> Tudo pronto? Vamos lá!");
     
         Random rand = new Random();
-        int upperbound = 10;
+        int min = 1;
+        int max = 10;
 
-        int numeroRandom = rand.nextInt(upperbound);
+        int numeroRandom = rand.nextInt((max - min) + 1) + min; //Não sei a lógica por trás dessa equação...
         int guess;
         System.out.println("> Digite um número entre 1 e 10: ");
         Scanner read = new Scanner(System.in);
@@ -24,7 +25,7 @@ public class Advinhacao {
         if (guess == numeroRandom) {
             System.out.println("> Acertou de primeira! Excelente chute!");
         } else {
-            int contatorTentativas = 0; //mas e se a pessoa for até 1000 tentativas? Deveria colocar uma barreira nisso, como um game over.
+            int contatorTentativas = 0;
 
             do {
             System.out.print("> Errou. Mas não desista! ");
@@ -41,7 +42,7 @@ public class Advinhacao {
                 System.out.println("> Número inválido. Tente um número entre 1 e 10: ");
                 guess = read.nextInt();
         }   } while (guess != numeroRandom);
-            System.out.printf("Parabéns! Você acertou em %d tentativas!\n\n",contatorTentativas); //depois de quantas tentativas?
+            System.out.printf("Parabéns! Você acertou em %d tentativas!\n\n",contatorTentativas + 1);//.
         }
         read.close();
     }
